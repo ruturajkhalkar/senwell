@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <title>Senwell</title>
+  
+</head>
+<body>
+     <table>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Number of Duplicates</th>
+			</tr>
+		</thead>
+		<tbody>
+            <style>
+              
+                th, td {
+                    padding: 8px;
+                    text-align: left;
+                    border-bottom: 1px solid #ddd;
+                }
+                th {
+                    background-color: #f2f2f2;
+                }
+                .red {
+                    background-color: #aa2c2c;
+                }
+                .yellow {
+                    background-color: #e4e456;
+                }
+                .green {
+                    background-color: #1ad41a;
+                }
+            </style>
+			<script>
+				var data = [
+					{name:'rutik',duplicate:0},
+					{name:'rutik',duplicate:10},
+					{name:'radhika',duplicate:3},
+					{name:'sham',duplicate:5},
+					{name:'ram',duplicate:1},
+					{name:'pooja',duplicate:2},
+					{name:'shital',duplicate:0}
+				];
+              for (var i = 0; i < data.length; i++) {
+				var row = document.createElement('tr');
+				row.innerHTML = '<td>' + data[i].name + '</td>' + '<td>' + data[i].duplicate + '</td>';
+				if (data[i].duplicate > 0 && data[i].duplicate < 3) {
+					row.classList.add('red');
+				} else if (data[i].duplicate >= 3 && data[i].duplicate < 10) {
+					row.classList.add('yellow');
+				} else if (data[i].duplicate >= 10) {
+					row.classList.add('green');
+				}
+				document.querySelector('tbody').appendChild(row);
+			}
+		</script>
+	</tbody>
+</table>
+</body>
+    
+</body>
+</html>
